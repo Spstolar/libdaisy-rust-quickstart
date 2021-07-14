@@ -1,24 +1,18 @@
 # [Documentation](https://docs.rs/libdaisy)
 
 ## libdaisy
-Hardware Abstraction Layer implementation for Daisy boards.
+
+`libdaisy` is Hardware Abstraction Layer implementation for Daisy boards. This is a template so you can quickly begin using it.
 
 ## Requirements
 
-### A Flashing Utility
-* [Electro-smith web programmer](https://electro-smith.github.io/Programmer/)
+The Minimum Supported Rust Version (MSRV) at the moment is 1.51.0.
 
-OR
+You have to make sure you have the requirements listed in the following section as well as one of the following flashing utilities:
 
-* [dfu-util](http://dfu-util.sourceforge.net/)
-
-OR
-
-* [Probe.rs](https://probe.rs/)
-
-This requires a debug probe of some sort (e.g. ST link) and allows for fast debugging messages via RTT.
-
-cargo embed --features log-rtt --example passthru
+1. [Electro-smith web programmer](https://electro-smith.github.io/Programmer/)
+2. [dfu-util](http://dfu-util.sourceforge.net/)
+3. [Probe.rs](https://probe.rs/) Note, this requires a debug probe of some sort (e.g. ST link) and allows for fast debugging messages via RTT: `cargo embed --features log-rtt --example passthru`
 
 ## Using this template
 
@@ -44,7 +38,7 @@ cargo install cargo-generate
 Then, you will use `cargo-generate` to grab a template:
 
 ```
-cargo generate --git https://github.com/githubusername/mytemplate.git
+cargo generate --git https://github.com/Spstolar/libdaisy-rust-quickstart 
 ```
 
 Run the base template via:
@@ -61,6 +55,8 @@ dfu-util -a 0 -s 0x08000000:leave -D template.bin
 
 ## Build Other Examples
 
+We have also provided other examples that you can build as follows:
+
 ```
 cargo objcopy --example blinky --release -- -O binary blinky.bin
 ```
@@ -69,11 +65,8 @@ cargo objcopy --example blinky --release -- -O binary blinky.bin
 cargo objcopy --example passthru --release -- -O binary passthru.bin
 ```
 
-
-## Minimum supported Rust version
-
-The Minimum Supported Rust Version (MSRV) at the moment is 1.51.0.
-
 ## Demos
 
-[Looper](https://github.com/mtthw-meyer/daisy-looper) - Basic one button looper.
+Other demos using `libdaisy`:
+
+* [Looper](https://github.com/mtthw-meyer/daisy-looper) - Basic one button looper.
