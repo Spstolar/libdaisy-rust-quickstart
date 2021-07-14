@@ -47,12 +47,28 @@ Then, you will use `cargo-generate` to grab a template:
 cargo generate --git https://github.com/githubusername/mytemplate.git
 ```
 
-## Build Examples
+Run the base template via:
+
+```
+cargo objcopy --release -- -O binary template.bin
+```
+
+Then (if you're using `dfu-util`):
+
+```
+dfu-util -a 0 -s 0x08000000:leave -D template.bin
+```
+
+## Build Other Examples
+
+```
 cargo objcopy --example blinky --release -- -O binary blinky.bin
+```
 
+```
 cargo objcopy --example passthru --release -- -O binary passthru.bin
+```
 
-[cargo-binutils-url]: https://github.com/rust-embedded/cargo-binutils
 
 ## Minimum supported Rust version
 
