@@ -41,7 +41,7 @@ Next, install `cargo-generate` so that you can easily grab a template for your p
 cargo install cargo-generate
 ```
 
-Finally (at least for setup), you will use `cargo-generate` to grab a template:
+Then, you will use `cargo-generate` to grab a template:
 
 ```
 cargo generate --git https://github.com/githubusername/mytemplate.git
